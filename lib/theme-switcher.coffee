@@ -1,33 +1,44 @@
 module.exports =
-  configDefaults: {
-    themeOne: 'solarized-dark-syntax'
-    themeTwo: 'solarized-light-syntax'
-    uiOne: 'atom-dark-ui'
-    uiTwo: 'atom-light-ui'
-  }
+  config:
+    syntaxThemeOne:
+      type: 'string'
+      default: 'solarized-dark-syntax'
+    syntaxThemeTwo:
+      type: 'string'
+      default: 'solarized-light-syntax'
+    uiThemeOne:
+      type: 'string'
+      default: 'one-dark-ui'
+      title: 'UI Theme One'
+    uiThemeTwo:
+      type: 'string'
+      default: 'one-light-ui'
+      title: 'UI Theme Two'
 
   activate: (state) ->
-    atom.workspaceView.command 'theme-switcher:switch', => @switch()
+    atom.commands.add 'atom-workspace',
+      'theme-switcher:switch': =>
+        @switch()
 
   switch: ->
     currentThemes      = atom.config.get('core.themes')
-    currentSyntaxTheme = currentThemes[1]
     currentUITheme     = currentThemes[0]
+    currentSyntaxTheme = currentThemes[1]
 
-    themeOne = atom.config.get('theme-switcher.themeOne')
-    themeTwo = atom.config.get('theme-switcher.themeTwo')
+    uiThemeOne = atom.config.get('atom-theme-switcher.uiThemeOne')
+    uiThemeTwo = atom.config.get('atom-theme-switcher.uiThemeTwo')
 
-    if currentSyntaxTheme == themeOne
-      currentThemes[1] = themeTwo
+    syntaxThemeOne = atom.config.get('atom-theme-switcher.syntaxThemeOne')
+    syntaxThemeTwo = atom.config.get('atom-theme-switcher.syntaxThemeTwo')
+
+    if currentUITheme == uiThemeOne
+      currentThemes[0] = uiThemeTwo
     else
-      currentThemes[1] = themeOne
+      currentThemes[0] = uiThemeOne
 
-    uiOne = atom.config.get('theme-switcher.uiOne')
-    uiTwo = atom.config.get('theme-switcher.uiTwo')
-
-    if currentUITheme == uiOne
-      currentThemes[0] = uiTwo
+    if currentSyntaxTheme == syntaxThemeOne
+      currentThemes[1] = syntaxThemeTwo
     else
-      currentThemes[0] = uiOne
+      currentThemes[1] = syntaxThemeOne
 
     atom.config.set('core.themes', currentThemes)

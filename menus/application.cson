@@ -1,0 +1,16 @@
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      {
+        'label': 'Theme Switcher'
+        'submenu': [
+          {
+            'label': 'Switch'
+            'command': 'theme-switcher:switch'
+          }
+        ]
+      }
+    ]
+  }
+]

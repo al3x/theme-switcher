@@ -1,6 +1,6 @@
 # Atom Theme Switcher
 
-[![Build Status](https://travis-ci.org/al3x/atom-theme-switcher.svg?branch=master)](https://travis-ci.org/al3x/atom-theme-switcher)
+[![Build Status](https://travis-ci.org/al3x/theme-switcher.svg?branch=master)](https://travis-ci.org/al3x/theme-switcher)
 
 Switches between one set of syntax and UI themes and another when you hit a key or visit its menu item.
 

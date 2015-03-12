@@ -6,7 +6,7 @@ describe 'ThemeSwitcher', ->
     jasmine.attachToDOM(workspaceElement)
 
     waitsForPromise ->
-        atom.packages.activatePackage('theme-switcher')
+      atom.packages.activatePackage('theme-switcher')
 
   describe "when the theme-switcher:switch event is triggered", ->
     it "switches the theme", ->
@@ -28,15 +28,15 @@ describe 'ThemeSwitcher', ->
         expect(syntaxThemeAfterTrigger).not.toEqual(defaultSyntaxTheme)
 
         expect(uiThemeAfterTrigger)
-          .toEqual(atom.config.get('theme-switcher.uiThemeOne'))
+          .toEqual(atom.config.get('atom-theme-switcher.uiThemeOne'))
 
         expect(syntaxThemeAfterTrigger)
-          .toEqual(atom.config.get('theme-switcher.syntaxThemeOne'))
+          .toEqual(atom.config.get('atom-theme-switcher.syntaxThemeOne'))
 
         atom.commands.dispatch workspaceElement, 'theme-switcher:switch'
 
         expect(atom.config.get('core.themes')[0])
-          .toEqual(atom.config.get('theme-switcher.uiThemeTwo'))
+          .toEqual(atom.config.get('atom-theme-switcher.uiThemeTwo'))
 
         expect(atom.config.get('core.themes')[1])
-          .toEqual(atom.config.get('theme-switcher.syntaxThemeTwo'))
+          .toEqual(atom.config.get('atom-theme-switcher.syntaxThemeTwo'))

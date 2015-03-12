@@ -25,11 +25,11 @@ module.exports =
     currentUITheme     = currentThemes[0]
     currentSyntaxTheme = currentThemes[1]
 
-    uiThemeOne = atom.config.get('theme-switcher.uiThemeOne')
-    uiThemeTwo = atom.config.get('theme-switcher.uiThemeTwo')
+    uiThemeOne = atom.config.get('atom-theme-switcher.uiThemeOne')
+    uiThemeTwo = atom.config.get('atom-theme-switcher.uiThemeTwo')
 
-    syntaxThemeOne = atom.config.get('theme-switcher.syntaxThemeOne')
-    syntaxThemeTwo = atom.config.get('theme-switcher.syntaxThemeTwo')
+    syntaxThemeOne = atom.config.get('atom-theme-switcher.syntaxThemeOne')
+    syntaxThemeTwo = atom.config.get('atom-theme-switcher.syntaxThemeTwo')
 
     if currentUITheme == uiThemeOne
       currentThemes[0] = uiThemeTwo

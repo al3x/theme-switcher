@@ -28,15 +28,15 @@ describe 'ThemeSwitcher', ->
         expect(syntaxThemeAfterTrigger).not.toEqual(defaultSyntaxTheme)
 
         expect(uiThemeAfterTrigger)
-          .toEqual(atom.config.get('atom-theme-switcher.uiThemeOne'))
+          .toEqual(atom.config.get('theme-switcher.uiThemeOne'))
 
         expect(syntaxThemeAfterTrigger)
-          .toEqual(atom.config.get('atom-theme-switcher.syntaxThemeOne'))
+          .toEqual(atom.config.get('theme-switcher.syntaxThemeOne'))
 
         atom.commands.dispatch workspaceElement, 'theme-switcher:switch'
 
         expect(atom.config.get('core.themes')[0])
-          .toEqual(atom.config.get('atom-theme-switcher.uiThemeTwo'))
+          .toEqual(atom.config.get('theme-switcher.uiThemeTwo'))
 
         expect(atom.config.get('core.themes')[1])
-          .toEqual(atom.config.get('atom-theme-switcher.syntaxThemeTwo'))
+          .toEqual(atom.config.get('theme-switcher.syntaxThemeTwo'))

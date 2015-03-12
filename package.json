@@ -1,7 +1,7 @@
 {
   "name": "theme-switcher",
   "main": "./lib/theme-switcher",
-  "version": "1.2.0",
+  "version": "1.1.0",
   "description": "Switches between one theme and another. Ideal for light/dark themes like Solarized.",
   "repository": "https://github.com/al3x/atom-theme-switcher",
   "license": "MIT",

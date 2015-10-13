@@ -6,10 +6,12 @@ describe 'ThemeSwitcher', ->
     jasmine.attachToDOM(workspaceElement)
 
     waitsForPromise ->
-        atom.packages.activatePackage('theme-switcher')
+      atom.packages.activatePackage('theme-switcher')
 
   describe "when the theme-switcher:switch event is triggered", ->
     it "switches the theme", ->
+      atom.config.set('core.themes', ['one-light-ui', 'solarized-light-syntax'])
+
       defaultThemes      = atom.config.get('core.themes')
       defaultUITheme     = defaultThemes[0]
       defaultSyntaxTheme = defaultThemes[1]
